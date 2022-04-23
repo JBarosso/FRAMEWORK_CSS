@@ -1,0 +1,22 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.1.3",
+    "autoprefixer": "^10.3.6",
+    "gulp-cli": "^2.3.0",
+    "gulp-replace": "^1.1.3",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
