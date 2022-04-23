@@ -1,0 +1,7 @@
+@use "./sass" as *;
+
+//? Code
+.toto{
+    background-color: $v_color-primary;
+    height: 10rem;
+}
