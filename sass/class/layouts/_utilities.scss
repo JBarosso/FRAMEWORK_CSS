@@ -6,9 +6,9 @@
 //? Class pour gestion de 2 éléments gauche droite max-width flex basis
 .mw-basis{
 
-    @each $mw-modifier, $mw-val in $class_mw-values {
+    @each $basis-modifier, $basis-val in $class_basis-values {
         
-        @each $basis-modifier, $basis-val in $class_elem-width {
+        @each $mw-modifier, $mw-val in $class_elem-width {
         
             &--#{$mw-modifier}-#{$basis-modifier}{
 

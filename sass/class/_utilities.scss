@@ -6,7 +6,7 @@
 @each $class, $property in $class_displays {
     
     @include m_breakpoint-class($class){
-        display: $property;
+        display: $property !important;
     }
 }
 
