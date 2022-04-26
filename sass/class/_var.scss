@@ -14,6 +14,11 @@ $class_direction-all:(
     'l' 'left'
 );
 
+$class_direction-axes:(
+    'x',
+    'y'
+);
+
 //? Collection pour générer des querys
 $class_query-direction:(
     min,
@@ -103,4 +108,48 @@ $class_border-radius-none-y:(
 $class_border-radius-none-x:(
     right,
     left
+);
+
+//? Text property
+$class_text-aligns:(
+    left,
+    justify,
+    right,
+    center
+);
+
+$class_text-transforms:(
+    uppercase,
+    lowercase,
+    capitalize,
+);
+
+$class_text-overflows:(
+    ellipsis,
+    clip,
+);
+
+$class_text-properties:(
+    'a' 'align' $class_text-aligns,
+    'c' 'color' $v_colors,
+    't' 'transform' $class_text-transforms,
+    'o' 'overflow' $class_text-overflows,
+);
+
+$class_font-styles:(
+    italic
+);
+
+$class_overflow-properties:(
+    auto,
+    hidden,
+    clip,
+    visible,
+    scroll,
+);
+
+$class_floats:(
+    'right',
+    'left',
+    'none',
 );

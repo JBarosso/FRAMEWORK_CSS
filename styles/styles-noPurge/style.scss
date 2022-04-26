@@ -2,12 +2,16 @@
     $v_color-secondary: #af2323
 );
 
-/* CODE NO PURGE */
+/*! purgecss start ignore */
 .bloc-expertise{
     height: 10rem;
 }
 
 .header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
     box-shadow: 0 0 3rem rgba(0,0,0,.1);
 
     &__container{
@@ -28,9 +32,12 @@
         @include m_breakpoint(max,md){
             position: fixed;
             background-color: transparentize($v_color-secondary, .1);
-            @include m_translate-center();
+            right: 0;
+            top: 0;
+            transform: translateX(100%);
             @include m_box(100%);
             z-index: $v_z-index-fixed;
+            transition: all .3s ease-in-out;
         }
     }
 
@@ -58,6 +65,16 @@
                 background-color: m_set-color($v_color-secondary);
             }
         }
+
+        &__principale{
+            transform: translateX(0);
+            flex-direction: column;
+            justify-content: center;
+
+            a{
+                color: m_set-color($v_color-secondary);
+            }
+        }
     }
 }
-/* END CODE NO PURGE */
+/*! purgecss end ignore */

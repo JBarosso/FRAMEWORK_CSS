@@ -41,3 +41,31 @@
         height: 100%;
     }
 }
+
+//? Overflow
+@include m_breakpoint-class(overflow){
+
+    @each $property in $class_overflow-properties {
+        
+        &--#{$property}{
+            overflow: $property;
+        }
+
+        @each $direction in $class_direction-axes {
+
+            &--#{$direction}-#{$property}{
+                overflow-#{$direction}: $property;
+            }
+        }
+    }
+}
+
+//? Float
+@include m_breakpoint-class(float){
+
+    @each $property in $class_floats {
+        &--#{$property}{
+            float: $property;
+        }
+    }
+}
