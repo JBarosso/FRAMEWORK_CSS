@@ -1,6 +1,7 @@
 @use "../../variables" as *;
 @use "../../mixins" as *;
 @use "../var" as *;
+@use "../../vendors/rfs" as *;
 
 $class_m-p:(
     'm': 'margin',
@@ -36,6 +37,82 @@ $class_m-p:(
                         #{$property}-#{$prop-2}: 0!important;
                     }
                 }
+            }
+        }
+    }
+}
+
+//? RFS MARGIN PADDING
+.rfs\:{
+
+    &p{
+
+        @each $modifier, $val in $v_paddings {
+            
+            &--#{$modifier}{
+                @include rfs_padding($val);
+            }
+                    
+            &t--#{$modifier}{
+                @include rfs_padding-top($val);
+            }
+
+            &t--#{$modifier}{
+                @include rfs_padding-right($val);
+            }
+
+            &t--#{$modifier}{
+                @include rfs_padding-bottom($val);
+            }
+
+            &t--#{$modifier}{
+                @include rfs_padding-left($val);
+            }
+
+            &x--#{$modifier}{
+                @include rfs_padding-left($val);
+                @include rfs_padding-right($val);
+            }
+
+            &y--#{$modifier}{
+                @include rfs_padding-top($val);
+                @include rfs_padding-bottom($val);
+            }
+        }
+    }
+
+    &m{
+
+        @each $modifier, $val in $v_margins {
+
+            &--#{$modifier}{
+                @include rfs_margin($val);
+            }
+                    
+            &t--#{$modifier}{
+                @include rfs_margin-top($val);
+            }
+
+            &t--#{$modifier}{
+                @include rfs_margin-right($val);
+            }
+
+            &t--#{$modifier}{
+                @include rfs_margin-bottom($val);
+            }
+
+            &t--#{$modifier}{
+                @include rfs_margin-left($val);
+            }
+
+            &x--#{$modifier}{
+                @include rfs_margin-left($val);
+                @include rfs_margin-right($val);
+            }
+
+            &y--#{$modifier}{
+                @include rfs_margin-top($val);
+                @include rfs_margin-bottom($val);
             }
         }
     }
