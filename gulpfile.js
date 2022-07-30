@@ -10,10 +10,10 @@ function scssTask(){
 
   console.log('\x1b[33m%s\x1b[0m', 'Compilation en cours...');
 
-  return src('./styles/styles-noPurge/style.scss', { sourcemaps: true }) 
+  return src('./assets/styles/styles-noPurge/style.scss', { sourcemaps: true }) 
     .pipe(sass()) //* Compile SCSS
     .pipe(prefix('last 2 versions')) //* Autoprefixer CSS file
-    .pipe(dest('./styles/styles-noPurge', { sourcemaps: '.' })) //* Create css file
+    .pipe(dest('./assets/styles/styles-noPurge', { sourcemaps: '.' })) //* Create css file
 
     .on('end', function(){ console.log('\x1b[96m%s\x1b[0m', 'Compilation Done !'); });
 };
@@ -23,7 +23,7 @@ function purgeTask(){
 
   console.log('\x1b[31m%s\x1b[0m', 'Purge css en cours...');
 
-  return src('./styles/styles-noPurge/style.css', { sourcemaps: false }) 
+  return src('./assets/styles/styles-noPurge/style.css', { sourcemaps: false }) 
     .pipe(purgecss({
       content: [
         './pages/*.html'
@@ -39,14 +39,14 @@ function purgeTask(){
       safelist: ['/*! purgecss start ignore */', '/*! purgecss end ignore */']
     })) //* PURGE css file
     .pipe(minify()) //* Minify css file
-    .pipe(dest('./styles/styles-purge')) //* Creat purge css file
+    .pipe(dest('./assets/styles/styles-purge')) //* Creat purge css file
 
     .on('end', function(){ console.log('\x1b[96m%s\x1b[0m', 'Purge Done !'); });
 };
 
 //? Watch
 function watchTask(){
-  watch(['./styles/styles-noPurge/style.scss'], series(scssTask, purgeTask));
+  watch(['./assets/styles/styles-noPurge/style.scss'], series(scssTask, purgeTask));
   watch('./pages/*.html', purgeTask);
 }
 

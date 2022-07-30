@@ -1,0 +1,11 @@
+@use "../../sass/" as * with(
+    $v_color-primary: #af2323,
+);
+
+/*! purgecss start ignore */
+
+body{
+    background-color: $v_color-danger;
+}
+
+/*! purgecss end ignore */
