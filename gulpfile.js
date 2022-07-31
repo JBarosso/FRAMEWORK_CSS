@@ -31,7 +31,7 @@ function purgeTask(){
       extractors: [
           {
               extractor: content => {
-                  return content.match(/[A-z0-9-:\/]+/g) || []
+                return content.match(/[A-z0-9-:\/]+/g) || [];
               },
               extensions: ['css', 'html']
           }
