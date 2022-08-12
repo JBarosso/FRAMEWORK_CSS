@@ -144,3 +144,21 @@
     width: 100%;
     max-width: $max-width;
 }
+
+//? Z index
+/// Mixin qui permet de setup un grid-row pour chaque élément
+/// @group layout
+/// @param {nbr} $step [1] - De combien est séparé chaque élément
+/// @param {nbr} $start [1] - A quel order on le 1er élément démarre
+/// @param {list} $list - Liste des éléments dans l'ordre
+/// @example @include m_z-index(1,1,'.toto','.tutu','.tata');
+@mixin m_z-index($step: 1, $start: 1, $list...){
+    $count-1: $start;
+    @each $elem in $list {
+        #{$elem}{
+            z-index: #{$count-1};
+        }
+  
+      $count-1: $count-1 + $step;
+    }
+  }
