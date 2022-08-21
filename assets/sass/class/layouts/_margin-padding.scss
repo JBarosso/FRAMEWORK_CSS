@@ -12,6 +12,14 @@ $class_m-p:(
 @each $elem, $property in $class_m-p {
     
     @include m_breakpoint-class($elem){
+        
+        @each $modifier, $val in $v_margins {
+                    
+            &--#{$modifier}{
+
+                #{$property}: $val;
+            }
+        }
 
         @each $direction, $prop-1, $prop-2 in $class_direction-all {
            
